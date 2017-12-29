@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> KH | Online Counter</title>
+  <style type="text/css">
+    * {
+      padding: 0px;
+      margin: 0 auto;
+    }
+    body {
+      background-color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      margin-top: 2%;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 50px;
+    }
+    p {
+      margin: 0 auto;
+      color: white;
+      font-size: 55px;
+      margin-top: 2em;
+    }
+    button {
+      border-radius: 15px;
+      width: 10em;
+      background: none;
+      color: white;
+      font-size: 30px;
+      border-color: red;
+      height: 5em;
+      margin-top: 3.5em;    
+    }
+    footer {
+    color: white;
+    margin-top: 5em;
+    }  
+  </style>
+</head>
+<body>
+  <div align="center">
+    <h1> Online Counter </h1>
+    <button type="button" id="clickMe"> Tap Me </button>
+    <p>Total Counts:<span id="counts"></span></p>
+    <button type="button" id="resetMe"> Reset Count </button>
+    <footer>Created By <strong>Kasim Hussain</strong> 2017</footer>
+  </div>
+  <script type="text/javascript">
+    function autorun() {
+    }
+    if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+    else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+    else window.onload = autorun;
+    var counterValue = 0;
+    var clickMe = document.getElementById('clickMe');
+    clickMe.addEventListener('click', counterFunction);
+    function counterFunction() {
+      counterValue++;
+      counts.innerHTML = ' ' + counterValue;
+      if (counterValue === 100 || counterValue == 200 || counterValue == 300 || counterValue == 400 || counterValue == 500) {
+        alert("You have" + ' ' + (counterValue) + ' ' + "counts");
+      }
+    }
+    var reset = document.getElementById('resetMe');
+    reset.addEventListener('click', resetFunction);
+    function resetFunction() {
+      counterValue = 0;
+      counts.innerHTML = ' ' + counterValue;
+    }
+
+
+
+
+
+
+    
+  </script>
+</body>
+</html>
